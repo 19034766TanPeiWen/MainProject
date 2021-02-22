@@ -1,0 +1,118 @@
+--
+-- Drop tables if they exist to make script re-runnable
+--
+DROP TABLE IF EXISTS UserDetails;
+DROP TABLE IF EXISTS Music;
+
+--
+-- Create tables
+--
+
+CREATE TABLE Music(
+	music_id INT IDENTITY PRIMARY KEY,
+	name          VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE UserDetails(
+        UserName    VARCHAR(50) NOT NULL,
+        Email       VARCHAR(50) NOT NULL,	
+	Password    VARBINARY(50) NOT NULL,
+	Image       VARCHAR(70) NOT NULL,
+        PRIMARY KEY CLUSTERED ([UserName] ASC)
+);
+
+[UserId]   VARCHAR (10)   NOT NULL,
+    [UserPw]   VARBINARY (50) NOT NULL,
+    [FullName] VARCHAR (50)   NOT NULL,
+    PRIMARY KEY CLUSTERED ([UserId] ASC)
+
+CREATE TABLE UserDetails(
+       
+        UserName    VARCHAR(50) NOT NULL,
+        Email       VARCHAR(50) NOT NULL,	
+	Password    VARCHAR(50) NOT NULL,
+	Image       VARCHAR(70) NOT NULL,
+PRIMARY KEY CLUSTERED ([UserName] ASC)
+        
+);
+
+CREATE TABLE Emotion(
+        Sno         INT PRIMARY KEY IDENTITY,
+        UserName    VARCHAR(50) NOT NULL,
+        Email       VARCHAR(50) NOT NULL,	
+	Password    VARCHAR(50) NOT NULL,
+	Image       VARCHAR(70) NOT NULL,
+        
+);
+
+CREATE TABLE Habib(
+	Image       VARCHAR(70) NOT NULL,
+        PRIMARY KEY CLUSTERED ([Image] ASC)
+);
+
+CREATE TABLE EmotionUserData (
+    ID        INT PRIMARY KEY IDENTITY,
+    username  VARCHAR (20) NOT NULL,
+    Anger     FLOAT (53)   NOT NULL,
+    Contempt  FLOAT (53)   NOT NULL,
+    Disgust   FLOAT (53)   NOT NULL,
+    Fear      FLOAT (53)   NOT NULL,
+    Happiness FLOAT (53)   NOT NULL,
+    Neutral   FLOAT (53)   NOT NULL,
+    Sadness   FLOAT (53)   NOT NULL,
+    Surprise  FLOAT (53)   NOT NULL
+);
+
+
+CREATE TABLE Notes(
+        UserName    VARCHAR(50) NOT NULL,
+        Dairy       VARCHAR(2000) NOT NULL,	
+	PRIMARY KEY CLUSTERED ([UserName] ASC)
+        
+);
+
+CREATE TABLE Emotion (
+    ID         INT PRIMARY KEY IDENTITY, 
+    Anger     Float NOT NULL,
+    Contempt  Float NOT NULL,
+    Disgust   Float NOT NULL,
+    Fear      Float NOT NULL,
+    Happiness Float NOT NULL,
+    Neutral   Float NOT NULL,
+    Sadness   Float NOT NULL,
+    Surprise  Float NOT NULL,
+    
+);
+
+CREATE TABLE UserName (
+    ID         INT PRIMARY KEY IDENTITY, 
+    UserName       VARCHAR(70) NOT NULL,
+    
+);
+
+
+CREATE TABLE UserLogin (
+  UserName   VARCHAR(50) PRIMARY KEY,
+  UserPw    VARBINARY(50) NOT NULL,
+);
+
+INSERT INTO EmotionUserData(username, Anger, Contempt, Disgust, Fear, Happiness, Neutral, Sadness, Surprise) VALUES('tan',0.000,0.004,0.420,0.000,0.000,0.000,0.580,0.000);
+
+INSERT INTO EmotionUserData(username, Anger, Contempt, Disgust, Fear, Happiness, Neutral, Sadness, Surprise) VALUES('peiwen',0.000,0.000,0.000,0.000,0.000,0.400,0.600,0.000);
+
+INSERT INTO EmotionUserData(username, Anger, Contempt, Disgust, Fear, Happiness, Neutral, Sadness, Surprise) VALUES('peiwen',0.000,0.004,0.42,0.000,0.000,0.000,0.800,0.000);
+
+UPDATE EmotionUserData SET username ='peiwen', Anger= 0.000, Contempt = 0.000, Disgust = 0.320, Fear = 0.000, Happiness = 0.000, Neutral = 0.000, Sadness = 0.680, Surprise = 0.000 WHERE ID = 17;
+
+INSERT INTO music_id(name) VALUES
+('80f454de-8b2b-4640-80fb-0a847abffd7d.mp4');
+
+INSERT INTO UserDetails(UserName, Email, Password, Image) VALUES
+('peiwen','peiwen@gmail.com', HASHBYTES('SHA1', '0987654321'),'cf76531e-930b-4622-ad27-b36fa5801575.png');
+
+INSERT INTO UserDetails(UserName, Email, Password, Image) VALUES
+('peiwen','peiwen@gmail.com', '0987654321','cf76531e-930b-4622-ad27-b36fa5801575.png');
+
+
+INSERT INTO UserLogin (UserName, UserPw) VALUES 
+('Tan',    HASHBYTES('SHA1', '0987654321'));
