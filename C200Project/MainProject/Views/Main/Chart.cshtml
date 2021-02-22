@@ -1,0 +1,53 @@
+﻿@section MoreScripts {
+    <script language="javascript">
+
+      $(document).ready(function () {
+         new Chart(document.getElementById("chart"), {
+             type: '@ViewData["Chart"]',
+            data: {
+               labels: @Json.Serialize(ViewData["Labels"]),
+               datasets: [{
+                  label: '@ViewData["Legend"]',
+                  data: @Json.Serialize(ViewData["Data"]),
+                  backgroundColor: @Json.Serialize(ViewData["Colors"]),
+                  fill: false
+               }]
+            },
+            options: {
+               responsive: false,
+               legend: {
+                  display: @ViewData["ShowLegend"]
+               },
+               title: {
+                  display: true,
+                  text: '@ViewData["Title"]'
+                },
+                plugins: {
+                    labels: {
+                        render: 'value'
+                    }
+                }
+            }
+         });
+      });
+
+    </script>
+
+}
+<style>
+    .body {
+        background-image: linear-gradient(150deg,#FFFFFF,#DDF3FB);
+        height: 100vh;
+        width: 100%;
+    }
+
+</style>
+<body class="body">
+    <div class="container">
+        <canvas id="chart" width="600" height="400"></canvas>
+    </div>
+</body>
+
+
+
+

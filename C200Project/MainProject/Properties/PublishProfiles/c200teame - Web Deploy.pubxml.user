@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANsmNro2VykGBqwYOYHg4cwAAAAACAAAAAAAQZgAAAAEAACAAAABw3lgvkT4rwnmxAvGtFyMDN347uHPJ/lRZkx37+YDnoQAAAAAOgAAAAAIAACAAAADJTHLGF7QPf4ZNiGr63EDUEfQN5N6AtiaO+9tzGtYTUYAAAACHuTKARNUcjBlJJRs6SYlvuGhJEoOiqEzWp06uF4z7L/0jKErDvqbOQagUO4yNQ+KXWWIObePRgHPmQiyo+GshEyGmlv3kiSIo4FxurE5ZALXOcr813+J8SFbfb4Ev3z20hMfHFJ7wGrvhIAHvqXLOHSSdZeALXYX9vr9gfuGznUAAAAB6qj2Ak3mYI0pjO4d/NwmeaN6/dfhd4NO4PQU+U/xCmPa+5SdHSFVG8M+/F1b+hH+/b/vsQz4qjzshhsvigEcL</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=tcp:c200-2020-e.database.windows.net,1433;Initial Catalog=C200-2020-TeamE;User Id=teamE@c200-2020-e;Password=c200_azure" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:webapplication1teame.database.windows.net,1433;Initial Catalog=WebApplication1_db;User Id=teamE@webapplication1teame;Password=c200_azure" />
+  </ItemGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ProductionConnection">
+      <Value>Server=tcp:c200web.database.windows.net,1433%3bInitial Catalog=c200%3bPersist Security Info=False%3bUser ID=admin123%3bPassword=Password0%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

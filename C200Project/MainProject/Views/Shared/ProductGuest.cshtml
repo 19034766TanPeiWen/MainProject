@@ -1,0 +1,34 @@
+﻿<nav class="navbar navbar-expand-sm navbar-light bg-light">
+   <a class="navbar-brand" asp-controller="Main" asp-action="homepage">
+       <img src="~/images/logo.png" height="60" />
+   </a>
+
+   <!-- Menu -->
+   <button class="navbar-toggler" type="button"
+           data-toggle="collapse" data-target="#navbarSupportedContent"
+           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="nav navbar-nav ml-auto">
+           <li>
+               <a class="nav-link" asp-controller="Account" asp-action="login">
+                   <i class="fa fa-sign-in-alt"></i>
+                   Sign In
+               </a>
+           </li>
+           <li>
+               <a class="nav-link" asp-controller="Register" asp-action="create">
+                   <i class="fa fa-user-plus"></i>
+                   Sign Up
+               </a>
+           </li>
+           <li>
+               &nbsp;&nbsp;&nbsp;
+           </li>
+       </ul>
+   </div>
+</nav>
+
+

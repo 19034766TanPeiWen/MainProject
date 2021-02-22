@@ -1,0 +1,83 @@
+﻿<style>
+    .body {
+        background-image: linear-gradient(150deg,#FFFFFF,#DDF3FB);
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1, h3 {
+        font-family: Segoe Print;
+        text-align: center;
+    }
+
+    .form-group {
+        font-family: MV Boli;
+        text-align: right;
+    }
+</style>
+<body class="body">
+
+    @model UserLogin
+        <div class="container">
+            <form asp-controller="Account"
+                  asp-action="login"
+                  method="post">
+                <h1>Sign In</h1>
+                <div class="form-group row">
+                    <img src="~/images/logo.png" height="300px" width="300px" />
+
+                    <div class="col-md-7">
+                        <div class="form-group row">
+                            <label asp-for="UserName" class="control-label col-md-3">Name: </label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" asp-for="UserName" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Password" class="control-label col-md-3">Password: </label>
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" asp-for="Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="text-align:left">
+                            <div class="offset-md-3 col-md-6" style="font-family: Kristen ITC">
+                                <input type="submit" class="btn btn-primary" value="Login" />
+                            </div>
+                        </div>
+                        <div class="form-group row" style="text-align:left">
+                            <div class="col-md-6 offset-md-3">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="text-align:left">
+                            <div class="col-md-6 offset-md-3">
+
+                                @if (ViewData["Message"] != null)
+                                {
+                                    <div class="alert alert-@ViewData["MsgType"]">
+                                        @ViewData["Message"]
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+
+                        <dir class="form-group row">
+                            <h3>No register yet? Join Now!</h3>
+                        </dir>
+                        <div class="form-group row" style="text-align:left">
+                            <div class="offset-md-3 col-md-6">
+                                <a asp-controller="Register"
+                                   asp-action="Create">
+                                    Sign Up
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </body>
+

@@ -1,0 +1,51 @@
+﻿<style>
+    .body {
+        background-image: linear-gradient(150deg,#FFFFFF,#DDF3FB);
+        height: 100vh;
+        width: 100%;
+    }
+    h1 {
+        font-family: Segoe Print;
+        text-align: center;
+    }
+
+    .form-group {
+        font-family: MV Boli;
+        text-align: right;
+    }
+</style>
+<body class="body">
+   
+    <div class="container">
+        <form asp-controller ="Main"
+              asp-action="trendsPost"
+              method="post">
+            <h1>Trends</h1>
+
+            <div class="form-group row">
+                <label class="control-label col-md-3" for="subr">Time Range:</label>
+                <div class="col-md-6">
+                    <select class="form-control dropdown" name="Trends" id="trends">
+                        <option class="col-md-3" value="">-- SELECT --</option>
+                        <option class="col-md-3" value="1day">1 day</option>
+                        <option class="col-md-3" value="1month">1 month</option>
+                        <option class="col-md-3" value="1month">1 year</option>
+                    </select>
+                </div>
+                <div class="form-group row" style="text-align:left;font-family: Kristen ITC">
+                    <div class="offset-md-3 col-md-6">
+                        <input type="submit" class="btn btn-primary" value="Select" />
+                    </div>
+                </div>
+                
+                @*<div class="offset-md-3 col-md-6" style="text-align:center">
+                    <a asp-controller="Main"
+                       asp-action="profile">
+                        back
+                    </a>
+                </div>*@
+                
+            </div>
+        </form>
+    </div>
+</body>

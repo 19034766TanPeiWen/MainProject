@@ -1,0 +1,86 @@
+﻿@model UserDetails
+<style>
+    .body {
+        background-image: linear-gradient(150deg,#FFFFFF,#DDF3FB);
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1 {
+        font-family: Segoe Print;
+        text-align: center;
+    }
+
+    .form-group {
+        font-family: MV Boli;
+        text-align: right;
+    }
+</style>
+<body class="body">
+
+    <div class="container">
+        <form asp-controller="Main"
+              asp-action="update"
+              method="post"
+              enctype="multipart/form-data">
+
+            <div class="form-group row">
+                <div class="offset-md-2 col-md-5">
+                    <h1>Update Details</h1>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="UserName" class="control-label col-md-3">Name: </label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" asp-for="UserName" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Email" class="control-label col-md-3">Email: </label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" asp-for="Email" />
+                </div>
+                <div class="col-sm-4">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Password" class="control-label col-md-3">Password: </label>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" asp-for="Password" />
+                </div>
+                <div class="col-sm-4">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-md-3" asp-for="Photo">Image :</label>
+                <div class="col-md-6">
+                    <input type="file" asp-for="Photo" class="form-control-file" />
+                </div>
+            </div>
+
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group row" style="text-align:left">
+                    <div class="col-md-6 offset-md-3">
+                        @if (ViewData["Message"] != null)
+                        {
+                            <div class="alert alert-@ViewData["MsgType"]">
+                                @ViewData["Message"]
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <div class="form-group row" style="text-align:left;font-family: Kristen ITC">
+                <div class="offset-sm-3 col-md-6">
+                    <input type="submit" class="btn btn-primary" value="Update" />
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</body>

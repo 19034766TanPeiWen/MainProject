@@ -1,0 +1,65 @@
+﻿<style>
+    .body {
+        background-image: linear-gradient(150deg,#FFFFFF,#DDF3FB);
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1 {
+        font-family: Segoe Print;
+        text-align: center;
+    }
+
+    .form-group {
+        font-family: Ink Free;
+        color: #0E0E55;
+        text-align: center;
+    }
+
+    .offset-md-3 {
+        font-family: Lucida Bright;
+        text-align: center;
+    }
+</style>
+<body class="body">
+    @model UserDetails
+
+    <h1>Welcome</h1>
+
+    <div class="form-group row">
+        <div class="form-group row">
+            <div class="offset-md-3 col-md-6">
+                <a asp-controller="Register"
+                   asp-action="Update">
+                    Update Details
+                </a>
+                <p></p>
+                <a asp-controller="Main"
+                   asp-action="trends">
+                    View Trends
+                </a>
+               
+            </div>
+
+        </div>
+
+        <div class="offset-md-3 col-md-6">
+            <p>
+                “Don’t try to force anything.<br>
+                Let life be a deep let-go.<br>
+                God opens millions of flowers every day<br>
+                without forcing their buds.”  —Osho
+            </p>
+        </div>
+        @if (TempData["Message"] != null)
+        {
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-@TempData["MsgType"]">
+                    @TempData["Message"]
+                </div>
+            }
+
+        }
+    </div>
+</body>
